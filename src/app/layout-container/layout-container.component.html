@@ -1,0 +1,13 @@
+<mat-toolbar class="layout-toolbar" color="primary">
+  <mat-toolbar-row>
+    <div class="w-100" fxLayout="row" fxLayoutAlign="space-between center">
+      <span>NEOITO</span>
+      <button mat-raised-button color="accent" (click)="addToHomeScreen()">
+        Add to home screen
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>
+  <router-outlet> </router-outlet>
+</main>
