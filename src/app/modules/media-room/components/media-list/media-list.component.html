@@ -1,0 +1,17 @@
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between center"
+  fxLayoutAlign="center"
+  fxLayoutGap="10px"
+  class="layout-card"
+>
+  <mat-card *ngFor="let item of items" fxFlex="calc(25% - 10px)">
+    <mat-card-header>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> {{ item.description }} </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button href="#" color="primary">More</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
