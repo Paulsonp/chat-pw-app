@@ -80,5 +80,6 @@
   .contact-list-layout {
     overflow-y: auto;
     border-right: 1px solid #ecebed;
+    height: calc(100vh - 200px);
   }
 }
