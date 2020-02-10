@@ -1,3 +1,24 @@
-<p>
-  chat-contact-list works!
-</p>
+<div class="contact-list" fxLayout="row wrap">
+  <div
+    class="w-100 contact-row"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12]"
+  >
+    <div fxLayout="row">
+      <div class="profile-pic">
+        <img
+          src="https://lh3.googleusercontent.com/proxy/KwTJapCtcjYxSitWIMWqgDmE0VuH9wpN2tvO3kGaiqZDEUogfVmvHFR2Ua6jpUiR_A8YoFZVE1MrWgmy6zM4_ZzHR7Ychu2Z_itvk4aK0E3FsgQAvQ"
+          alt=""
+        />
+      </div>
+      <div class="profile-details" fxLayout="column ">
+        <h3>paulson ps</h3>
+        <span> <b>trivandrm .</b> march 18 2020 </span>
+      </div>
+    </div>
+    <div fxLayoutAlign="center center" class="icon">
+      <button mat-button><mat-icon>more_vert</mat-icon></button>
+    </div>
+  </div>
+</div>

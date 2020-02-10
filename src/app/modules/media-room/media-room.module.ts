@@ -1,11 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {
-  MatToolbarModule,
-  MatCardModule,
-  MatButtonModule
-} from "@angular/material";
+import { MatToolbarModule, MatCardModule, MatButtonModule, MatMenuModule } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 
 import { MediaLayoutComponent } from "./container/media-layout/media-layout.component";
@@ -20,6 +16,7 @@ import { MediaListComponent } from "./components/media-list/media-list.component
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatMenuModule,
     MediaRoomRouting
   ],
   declarations: [MediaLayoutComponent, MediaListComponent]

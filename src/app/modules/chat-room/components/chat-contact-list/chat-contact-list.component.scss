@@ -1,0 +1,49 @@
+.contact-list {
+  margin-top: 5px;
+  .contact-row {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ecebed;
+    &:hover {
+      background-color: #7c89fc;
+    }
+    &:hover .profile-details h3 {
+      color: #fff;
+    }
+    &:hover .profile-details span {
+      color: #fff;
+    }
+    &:hover .icon {
+      color: #fff;
+    }
+  }
+  .profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ecebed;
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .profile-details {
+    h3 {
+      margin: 0;
+      padding-left: 10px;
+      text-transform: capitalize;
+      font-size: 18px;
+      color: #7c89fc;
+    }
+    span {
+      text-transform: capitalize;
+      font-size: 13px;
+      padding-left: 10px;
+      padding-top: 5px;
+      color: #777779;
+    }
+  }
+  .icon {
+    cursor: pointer;
+  }
+}
