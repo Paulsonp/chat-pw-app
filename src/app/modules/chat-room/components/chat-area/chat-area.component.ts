@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-chat-area",
@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./chat-area.component.scss"]
 })
 export class ChatAreaComponent implements OnInit {
+  @Input() selectedContact;
   constructor() {}
 
   ngOnInit() {}

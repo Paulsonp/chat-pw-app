@@ -6,7 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./chat-layout.component.scss"]
 })
 export class ChatLayoutComponent implements OnInit {
+  selectedContact: any;
+  getContactDeatils: any;
   constructor() {}
 
   ngOnInit() {}
+  selectedContactDetails(contact) {
+    console.log(contact);
+    this.selectedContact = contact;
+  }
 }

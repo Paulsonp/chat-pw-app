@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { ApiService, Item } from "src/app/shared/services/api.service";
 
 @Component({
@@ -9,6 +9,7 @@ import { ApiService, Item } from "src/app/shared/services/api.service";
 export class ChatContactListComponent implements OnInit {
   items: any[] = [];
   public searchName: any = "";
+  @Output() selectedContact: EventEmitter<any> = new EventEmitter<any>();
   constructor(private apiService: ApiService) {}
   ngOnInit() {
     this.fetchData();
@@ -24,5 +25,8 @@ export class ChatContactListComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+  getLogs(contact: any) {
+    this.selectedContact.emit(contact);
   }
 }

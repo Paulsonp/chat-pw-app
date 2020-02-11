@@ -1,6 +1,12 @@
 <div class="chat-room-layout" fxLayout="column ">
   <div class="h-100">
-    <div class="contact-list-layout" fxFlex="25"><app-chat-contact-list></app-chat-contact-list></div>
-    <div class="contact-list-layout" fxFlex="75"><app-chat-area></app-chat-area></div>
+    <div class="contact-list-layout" fxFlex="25">
+      <app-chat-contact-list
+        (selectedContact)="selectedContactDetails($event)"
+      ></app-chat-contact-list>
+    </div>
+    <div class="contact-list-layout" fxFlex="75">
+      <app-chat-area [selectedContact]="selectedContact"></app-chat-area>
+    </div>
   </div>
 </div>

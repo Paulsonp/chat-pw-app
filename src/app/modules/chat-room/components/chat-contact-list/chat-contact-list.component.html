@@ -15,14 +15,15 @@
   </div>
 </div>
 <div class="contact-list" fxLayout="row wrap">
-  <div fxLayout="row" fxLayoutAlign=" center" *ngIf="items?.length == 0">
+  <div fxLayout="row" *ngIf="items?.length == 0">
     <span>There is no contacts</span>
   </div>
   <div
     class="w-100 contact-row"
     fxLayout="row"
     fxLayoutAlign="space-between center"
-    *ngFor="let item of items | filter: searchName"
+    *ngFor="let item of items | filter: searchName; let i = index"
+    (click)="getLogs(item)"
   >
     <div fxLayout="row">
       <div class="profile-pic">
