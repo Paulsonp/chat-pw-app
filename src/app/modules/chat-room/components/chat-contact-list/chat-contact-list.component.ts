@@ -1,5 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from "@angular/core";
-import { ApiService, Item } from "src/app/shared/services/api.service";
+import {
+  ApiService,
+  Item,
+  ContactItem
+} from "src/app/shared/services/api.service";
 
 @Component({
   selector: "app-chat-contact-list",
@@ -17,15 +21,22 @@ export class ChatContactListComponent implements OnInit {
   fetchData() {
     this.apiService.fetch().subscribe(
       (data: Array<Item>) => {
-        console.log(data);
         this.items = data;
-        console.log("data", this.items);
       },
       err => {
         console.log(err);
       }
     );
   }
+
+  // getContactList() {
+  //   this.apiService.contactList().subscribe(data => {
+  //     this.items = data;
+  //     console.log("test", this.items);
+  //     // this.articles = data['articles'];
+  //   });
+  // }
+
   getLogs(contact: any) {
     this.selectedContact.emit(contact);
   }

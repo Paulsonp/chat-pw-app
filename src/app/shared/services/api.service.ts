@@ -8,6 +8,13 @@ export interface Item {
   html: string;
   markdown: string;
 }
+export interface ContactItem {
+  id: number;
+  f_name: string;
+  l_name: string;
+  email: string;
+  avatar: string;
+}
 @Injectable({
   providedIn: "root"
 })
@@ -17,4 +24,10 @@ export class ApiService {
   fetch(): Observable<Item[]> {
     return <Observable<Item[]>>this.httpClient.get(this.baseURL);
   }
+  contactList(): Observable<Item[]> {
+    return <Observable<Item[]>>(
+      this.httpClient.get("https://reqres.in/api/users?page=1")
+    );
+  }
+  r;
 }
