@@ -1,31 +1,6 @@
 <div class="chat-room-layout" fxLayout="column ">
-  <div class="chat-header">
-    <div class="chat-header-height" fxFlex="25" fxLayoutAlign="center center">
-      <div class="search-box" fxLayout="row" fxLayoutAlign="center center">
-        <input type="text" placeholder="Search name" />
-        <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
-      </div>
-    </div>
-    <div fxFlex="75" class="user-detail-header" fxLayoutAlign="space-between center">
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <div class="profile-pic">
-          <img
-            src="https://lh3.googleusercontent.com/proxy/KwTJapCtcjYxSitWIMWqgDmE0VuH9wpN2tvO3kGaiqZDEUogfVmvHFR2Ua6jpUiR_A8YoFZVE1MrWgmy6zM4_ZzHR7Ychu2Z_itvk4aK0E3FsgQAvQ"
-            alt=""
-          />
-        </div>
-        <div class="profile-details" fxLayout="column ">
-          <h3>paulson ps</h3>
-          <span> <b>trivandrm .</b> march 18 2020 </span>
-        </div>
-      </div>
-      <div class="icon-right" fxLayout="row">
-        <button mat-button><mat-icon>call</mat-icon></button> <button mat-button><mat-icon>more_vert</mat-icon></button>
-      </div>
-    </div>
-  </div>
   <div class="h-100">
     <div class="contact-list-layout" fxFlex="25"><app-chat-contact-list></app-chat-contact-list></div>
-    <div fxFlex="75">jd</div>
+    <div class="contact-list-layout" fxFlex="75"><app-chat-area></app-chat-area></div>
   </div>
 </div>

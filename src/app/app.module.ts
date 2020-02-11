@@ -14,9 +14,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LayoutContainerComponent } from "./layout-container/layout-container.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
+import { SearchPipe } from "./shared/search.pipe";
 
 @NgModule({
-  declarations: [AppComponent, LayoutContainerComponent],
+  declarations: [AppComponent, LayoutContainerComponent, SearchPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
