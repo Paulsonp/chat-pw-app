@@ -14,9 +14,11 @@ export class ChatContactListComponent implements OnInit {
   items: any[] = [];
   public searchName: any = "";
   @Output() selectedContact: EventEmitter<any> = new EventEmitter<any>();
+  userlist: any;
   constructor(private apiService: ApiService) {}
   ngOnInit() {
     this.fetchData();
+    this.getContactList();
   }
   fetchData() {
     this.apiService.fetch().subscribe(
@@ -29,13 +31,13 @@ export class ChatContactListComponent implements OnInit {
     );
   }
 
-  // getContactList() {
-  //   this.apiService.contactList().subscribe(data => {
-  //     this.items = data;
-  //     console.log("test", this.items);
-  //     // this.articles = data['articles'];
-  //   });
-  // }
+  getContactList() {
+    this.apiService.contactList().subscribe(res => {
+      this.userlist = res["result"];
+      console.log("test", this.userlist);
+      // this.articles = data['articles'];
+    });
+  }
 
   getLogs(contact: any) {
     this.selectedContact.emit(contact);

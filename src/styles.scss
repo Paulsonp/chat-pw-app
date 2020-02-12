@@ -16,3 +16,13 @@ body {
 .h-100 {
   height: 100%;
 }
+
+.chat-container {
+  .mat-drawer-container {
+    height: 100vh;
+    background-color: transparent !important;
+  }
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: transparent !important;
+  }
+}

@@ -7,10 +7,14 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ChatLayoutComponent implements OnInit {
   selectedContact: any;
+  view: any;
+  toggle = false;
+
   constructor() {}
 
   ngOnInit() {}
   selectedContactDetails(contact) {
     this.selectedContact = contact;
+    console.log("dfghj", this.selectedContact);
   }
 }

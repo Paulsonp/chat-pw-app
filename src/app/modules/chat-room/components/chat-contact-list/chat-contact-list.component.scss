@@ -57,9 +57,6 @@
     &:hover .profile-details span {
       color: #fff;
     }
-    &:hover .icon {
-      color: #fff;
-    }
     &:hover .time-zone {
       color: #fff;
     }
@@ -69,6 +66,24 @@
     height: 45px;
     border-radius: 50%;
     background: #ecebed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .active-badge {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 0;
+      right: 0;
+    }
+    .active {
+      background-color: green;
+    }
+    .inactive {
+      background-color: orange;
+    }
     img {
       border-radius: 50%;
       width: 100%;
@@ -76,17 +91,18 @@
     }
   }
   .profile-details {
+    padding-top: 5px;
     h3 {
       margin: 0;
       padding-left: 10px;
       text-transform: capitalize;
-      font-size: 18px;
+      font-size: 16px;
       color: #7c89fc;
       @extend .text-turcate;
     }
     span {
       text-transform: capitalize;
-      font-size: 13px;
+      font-size: 12px;
       padding-left: 10px;
       padding-top: 5px;
       color: #777779;
@@ -98,7 +114,7 @@
       color: #7c89fc;
       font-size: 13px;
       position: relative;
-      top: -4px;
+      top: 2px;
       text-transform: uppercase;
     }
     .badge-icon {
@@ -111,6 +127,8 @@
       align-items: center;
       justify-content: center;
       color: #fff;
+      position: relative;
+      top: 5px;
     }
   }
 }

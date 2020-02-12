@@ -10,7 +10,9 @@ import {
   MatInputModule,
   MatIconModule,
   MatButtonModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSidenavModule,
+  MatSelectModule
 } from "@angular/material";
 import { ChatContactListComponent } from "./components/chat-contact-list/chat-contact-list.component";
 import { ChatAreaComponent } from "./components/chat-area/chat-area.component";
@@ -25,7 +27,9 @@ import { ChatAreaComponent } from "./components/chat-area/chat-area.component";
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatSelectModule
   ],
   declarations: [
     ChatLayoutComponent,

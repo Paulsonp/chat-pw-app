@@ -24,10 +24,9 @@ export class ApiService {
   fetch(): Observable<Item[]> {
     return <Observable<Item[]>>this.httpClient.get(this.baseURL);
   }
-  contactList(): Observable<Item[]> {
-    return <Observable<Item[]>>(
-      this.httpClient.get("https://reqres.in/api/users?page=1")
+  contactList() {
+    return this.httpClient.get(
+      "https://gorest.co.in/public-api/users?_format=json&access-token=ggH9Bi1prtymQS4mGVBCrAPetzve0WCpeYlw"
     );
   }
-  r;
 }

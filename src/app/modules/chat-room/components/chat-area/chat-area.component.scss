@@ -1,14 +1,16 @@
 .chat-header {
-  border-bottom: 1px solid #ecebed;
   .user-detail-header {
     padding: 0 20px;
     height: 80px;
-    padding: 0 20px;
+    border-bottom: 1px solid #ecebed;
     .profile-pic {
       width: 45px;
       height: 45px;
       border-radius: 50%;
       background: #ecebed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
         border-radius: 50%;
         width: 100%;
@@ -22,6 +24,22 @@
         text-transform: capitalize;
         font-size: 18px;
         color: #7c89fc;
+        position: relative;
+        .active-badge {
+          position: absolute;
+          border-radius: 10px;
+          top: 4px;
+          font-size: 9px;
+          padding: 2px 7px;
+          color: #fff;
+          margin-left: 10px;
+        }
+        .active {
+          background-color: green;
+        }
+        .inactive {
+          background-color: orange;
+        }
       }
       span {
         text-transform: capitalize;

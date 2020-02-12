@@ -1,20 +1,47 @@
-<div class="chat-header">
-  <div class="user-detail-header" fxLayoutAlign="space-between center">
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <div class="profile-pic">
-        <img
-          src="https://lh3.googleusercontent.com/proxy/KwTJapCtcjYxSitWIMWqgDmE0VuH9wpN2tvO3kGaiqZDEUogfVmvHFR2Ua6jpUiR_A8YoFZVE1MrWgmy6zM4_ZzHR7Ychu2Z_itvk4aK0E3FsgQAvQ"
-          alt=""
-        />
+<div class="chat-container">
+  <mat-drawer-container hasBackdrop="true">
+    <mat-drawer #drawer mode="overlay" position="end">I'm a drawer</mat-drawer>
+    <mat-drawer-content class="chat-header">
+      <div
+        class="user-detail-header"
+        fxLayoutAlign="space-between center"
+        *ngIf="selectedContact"
+      >
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div class="profile-pic">
+            <span
+              class="name-pro-pic"
+              *ngIf="!selectedContact['_links']?.avatar.href"
+              >{{ selectedContact.first_name[0]
+              }}{{ selectedContact.last_name[0] }}</span
+            >
+            <img src="{{ selectedContact['_links']?.avatar.href }}" alt="" />
+          </div>
+          <div class="profile-details" fxLayout="column ">
+            <h3>
+              {{ selectedContact?.first_name }} {{ selectedContact?.last_name }}
+              <span
+                class="active-badge"
+                [ngClass]="{
+                  active: selectedContact.status === 'active',
+                  inactive: selectedContact.status === 'inactive'
+                }"
+              >
+                {{ selectedContact?.status }}
+              </span>
+            </h3>
+            <span>
+              <b>{{ selectedContact?.email }} .</b> {{ selectedContact?.phone }}
+            </span>
+          </div>
+        </div>
+        <div class="icon-right" fxLayout="row">
+          <button mat-button><mat-icon>call</mat-icon></button>
+          <button mat-button (click)="drawer.toggle()">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
       </div>
-      <div class="profile-details" fxLayout="column ">
-        <h3>{{ selectedContact?.name }}</h3>
-        <span> <b>trivandrm .</b> march 18 2020 </span>
-      </div>
-    </div>
-    <div class="icon-right" fxLayout="row">
-      <button mat-button><mat-icon>call</mat-icon></button>
-      <button mat-button><mat-icon>more_vert</mat-icon></button>
-    </div>
-  </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

@@ -15,26 +15,33 @@
   </div>
 </div>
 <div class="contact-list" fxLayout="row wrap">
-  <div fxLayout="row" *ngIf="items?.length == 0">
+  <div fxLayout="row" *ngIf="userlist?.length == 0">
     <span>There is no contacts</span>
   </div>
   <div
     class="w-100 contact-row"
     fxLayout="row"
     fxLayoutAlign="space-between center"
-    *ngFor="let item of items | filter: searchName; let i = index"
+    *ngFor="let item of userlist | filter: searchName; let i = index"
     (click)="getLogs(item)"
   >
     <div fxLayout="row">
       <div class="profile-pic">
-        <img
-          src="https://lh3.googleusercontent.com/proxy/KwTJapCtcjYxSitWIMWqgDmE0VuH9wpN2tvO3kGaiqZDEUogfVmvHFR2Ua6jpUiR_A8YoFZVE1MrWgmy6zM4_ZzHR7Ychu2Z_itvk4aK0E3FsgQAvQ"
-          alt=""
-        />
+        <span
+          class="active-badge"
+          [ngClass]="{
+            active: item.status === 'active',
+            inactive: item.status === 'inactive'
+          }"
+        ></span>
+        <span class="name-pro-pic" *ngIf="!item['_links']?.avatar.href"
+          >{{ item.first_name[0] }}{{ item.last_name[0] }}</span
+        >
+        <img src="{{ item['_links']?.avatar.href }}" alt="" />
       </div>
       <div class="profile-details" fxLayout="column ">
-        <h3>{{ item.name }}</h3>
-        <span>{{ item.description }} </span>
+        <h3>{{ item?.first_name }} {{ item?.last_name }}</h3>
+        <span>test description </span>
       </div>
     </div>
     <div fxLayoutAlign="center center" fxLayout="column " class="msg-det">
